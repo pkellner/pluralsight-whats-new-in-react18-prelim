@@ -5,8 +5,9 @@ function RenderComponent({ specialPromiseResource }) {
   const cities = specialPromiseResource.getCities();
   return (
     <ul>
-      {cities.map(rec =>
-        <li key={rec.id}>{rec.name}</li>)}
+      {cities.map((rec) => (
+        <li key={rec.id}>{rec.name}</li>
+      ))}
     </ul>
   );
 }

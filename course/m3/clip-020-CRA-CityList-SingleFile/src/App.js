@@ -7,12 +7,11 @@ function RenderComponent({ resource }) {
 
   return (
     <>
-      {" "}
-      <h1>Cities by Population</h1>
-      <ul>
+      <h2>Suspense in React 18 (Pluralsight Course)</h2>
+      <ul className="list-group city--list">
         {cities?.map((rec) => (
-          <li key={rec.id}>
-            {rec.name} {parseInt(rec.population).toLocaleString("en-US")}
+          <li key={rec.id} className="list-group-item">
+            {rec.name}
           </li>
         ))}
       </ul>

@@ -9994,7 +9994,7 @@ export const cities = [
 export function topCities(n) {
   const ret = cities
     .sort((a, b) => {
-      return +(parseInt(b.population) - parseInt(a.population));
+      return a.name.localeCompare(b.name);
     })
     .slice(0, n);
   return ret;

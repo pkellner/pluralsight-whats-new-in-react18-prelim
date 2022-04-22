@@ -1,7 +1,7 @@
 import "./App.css";
 
 
-function CityList({displayCount}) {
+export default function CityList({displayCount}) {
   const data = [
     {id: 1, name: "Chicago"},
     {id: 2, name: "New York City"},
@@ -14,7 +14,7 @@ function CityList({displayCount}) {
     <ul>
       {data
         .slice(0, displayCount)
-        .map(rec => <li key={id}>{rec.name}</li>)}
+        .map(rec => <li key={rec.id}>{rec.name}</li>)}
     </ul>
   );
 }
