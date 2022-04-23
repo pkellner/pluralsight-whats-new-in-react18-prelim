@@ -47,11 +47,11 @@ const fetchCityInfo = (cityId) => {
       resolve(
         cities
           .filter((a) => a.id === cityId)
-          .map(function (rec) {
+          .map(function ({ id, name, state }) {
             return {
-              id: rec.id,
-              name: rec.city,
-              state: rec.state,
+              id,
+              name,
+              state,
             };
           })[0]
       );
@@ -65,11 +65,11 @@ const fetchCityStats = (cityId) => {
       resolve(
         cities
           .filter((a) => a.id === cityId)
-          .map(function (rec) {
+          .map(function ({growth, id, population}) {
             return {
-              id: rec.id,
-              population: rec.population,
-              growth: rec.growth_from_2000_to_2013,
+              id,
+              population,
+              growth,
             };
           })[0]
       );
