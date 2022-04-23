@@ -9,6 +9,7 @@ export default function CityDisplayCount() {
         return (
           <button
             type="button"
+            key={buttonCnt}
             className={
               displayCount === buttonCnt
                 ? "btn btn-secondary active"
