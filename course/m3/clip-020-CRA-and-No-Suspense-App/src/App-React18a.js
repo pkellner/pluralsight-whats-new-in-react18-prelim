@@ -1,6 +1,6 @@
 import "./App.css";
 import { Suspense } from "react";
-import {topCities} from "./data/cities";
+import { topCities } from "./data/cities";
 
 function RenderComponent({ resource }) {
   const cities = resource?.cities.read();
@@ -16,9 +16,12 @@ export default function App({ displayCount }) {
   const specialPromiseResource = createSpecialPromise(displayCount);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <RenderComponent resource={specialPromiseResource} />
-    </Suspense>
+    <>
+      <h1>React 18</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <RenderComponent resource={specialPromiseResource} />
+      </Suspense>
+    </>
   );
 }
 
