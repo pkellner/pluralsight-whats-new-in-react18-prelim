@@ -25,6 +25,8 @@ export default function App({ displayCount }) {
   );
 }
 
+////////////////////////////////////
+
 const fetchCities = (displayCount) => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -61,13 +63,12 @@ function wrapPromise(promise) {
   );
   return {
     read() {
-      switch (status) {
-        case "pending":
-          throw suspender;
-        case "error":
-          throw result;
-        case "success":
-          return result;
+      if (status === "pending") {
+        throw suspender;
+      } else if (status === "error") {
+        throw result;
+      } else if (status === "success") {
+        return result;
       }
     },
   };

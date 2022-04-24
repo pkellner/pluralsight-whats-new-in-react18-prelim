@@ -29,7 +29,7 @@ export default function App({ displayCount }) {
   );
 }
 
-/////
+////////////////////////////////////
 
 const fetchCities = (displayCount) => {
   return new Promise((resolve) => {
