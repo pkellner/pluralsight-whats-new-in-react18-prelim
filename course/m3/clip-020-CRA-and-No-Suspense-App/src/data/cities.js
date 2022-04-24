@@ -2199,16 +2199,16 @@ export const cities = [
     state: "California",
     id: 221,
   },
-  {
-    name: "Abilene",
-    growth_from_2000_to_2013: "3.6%",
-    latitude: 32.4487364,
-    longitude: -99.73314390000002,
-    population: "120099",
-    rank: "221",
-    state: "Texas",
-    id: 222,
-  },
+  // {
+  //   name: "Abilene",
+  //   growth_from_2000_to_2013: "3.6%",
+  //   latitude: 32.4487364,
+  //   longitude: -99.73314390000002,
+  //   population: "120099",
+  //   rank: "221",
+  //   state: "Texas",
+  //   id: 222,
+  // },
   {
     name: "Athens-Clarke County",
     growth_from_2000_to_2013: "19.0%",
@@ -9991,11 +9991,17 @@ export const cities = [
   },
 ];
 
+// get first "n" then sort them by reverse population
+// (this forces first record to change when n changes likely)
 export function topCities(n) {
   const ret = cities
+    .filter((a) => a.state === "Florida")
     .sort((a, b) => {
       return a.name.localeCompare(b.name);
     })
-    .slice(0, n);
+    .slice(0, n)
+    .sort((a, b) => {
+      return parseInt(b.population) - parseInt(a.population);
+    });
   return ret;
 }

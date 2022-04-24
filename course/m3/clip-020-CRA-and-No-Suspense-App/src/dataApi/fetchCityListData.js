@@ -26,19 +26,28 @@ function wrapPromise(promise) {
   );
   return {
     read() {
-      switch (status) {
-        case "pending":
-          throw suspender;
-        case "error":
-          throw result;
-        case "success":
-          return result;
+      if (status === "pending") {
+        throw suspender;
+      } else if (status === "error") {
+        throw result;
+      } else if (status === "success") {
+        return result;
       }
     },
   };
 }
 
-const fetchCities = (displayCount = 5) => {
+// const fetchCitiesREST = () => {
+//   return new Promise((resolve) => {
+//     fetch("https://jsonplaceholder.typicode.com/posts")
+//       .then((res) => res.json())
+//       .then((responseData) => {
+//         resolve(responseData);
+//       });
+//   });
+// };
+
+const fetchCities = (displayCount) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(topCities(displayCount));

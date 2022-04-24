@@ -1,5 +1,5 @@
 import "./App.css";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
 import { fetchCityListData } from "./dataApi/fetchCityListData";
 
 function RenderComponent({ resource }) {
@@ -11,7 +11,7 @@ function RenderComponent({ resource }) {
       <ul className="list-group city--list">
         {cities?.map((rec) => (
           <li key={rec.id} className="list-group-item">
-            {rec.name}
+            {rec.name} {rec.population}
           </li>
         ))}
       </ul>
@@ -19,12 +19,9 @@ function RenderComponent({ resource }) {
   );
 }
 function App({ displayCount }) {
-  const [resource, setResource] = useState();
-
-  useEffect(() => {
-    setResource(fetchCityListData(displayCount));
-  }, [displayCount]);
-
+  
+  const resource = fetchCityListData(displayCount);
+  
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <RenderComponent resource={resource} />
