@@ -38,7 +38,6 @@ const fetchCities = (displayCount = 3) => {
   });
 };
 
-
 ////////////////////////////////////
 
 function createSpecialPromise() {
@@ -78,4 +77,3 @@ function wrapPromise(promise) {
     },
   };
 }
-

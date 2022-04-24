@@ -1,5 +1,5 @@
-import {useContext} from "react";
-import {CityDetailStoreContext} from "../contexts/CityDetailStoreContext";
+import { useContext } from "react";
+import { CityDetailStoreContext } from "../contexts/CityDetailStoreContext";
 
 export default function CityButton({ city }) {
   const { setCityId } = useContext(CityDetailStoreContext);

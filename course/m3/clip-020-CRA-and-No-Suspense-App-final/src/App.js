@@ -19,9 +19,8 @@ function RenderComponent({ resource }) {
   );
 }
 function App({ displayCount }) {
-  
   const resource = fetchCityListData(displayCount);
-  
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <RenderComponent resource={resource} />

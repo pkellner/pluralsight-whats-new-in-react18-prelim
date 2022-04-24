@@ -4,7 +4,6 @@ import { fetchCityListData } from "../dataApi/fetchCityListData";
 export const CityListStoreContext = createContext();
 
 function CityListStoreProvider({ children, displayCount }) {
-  
   const resource = fetchCityListData(displayCount);
   const getCities = resource?.cities.read;
 
