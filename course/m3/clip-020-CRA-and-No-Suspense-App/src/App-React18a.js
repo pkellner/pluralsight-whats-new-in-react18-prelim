@@ -1,5 +1,6 @@
 import "./App.css";
 import { Suspense } from "react";
+import {topCities} from "./data/cities";
 
 function RenderComponent({ resource }) {
   const cities = resource?.cities.read();
@@ -21,28 +22,18 @@ export default function App({ displayCount }) {
   );
 }
 
-const fetchCities = (displayCount = 3) => {
+const fetchCities = (displayCount) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(
-        [
-          { id: 1, name: "Chicago" },
-          { id: 2, name: "New York City" },
-          { id: 3, name: "Miami" },
-          { id: 4, name: "Houston" },
-          { id: 5, name: "Phoenix" },
-          { id: 6, name: "San Jose" },
-        ].slice(0, displayCount)
-      );
+      resolve(topCities(displayCount));
     }, 2000);
   });
 };
 
-
 ////////////////////////////////////
 
-function createSpecialPromise() {
-  let citiesPromise = fetchCities();
+function createSpecialPromise(displayCount) {
+  let citiesPromise = fetchCities(displayCount);
   return {
     cities: wrapPromise(citiesPromise),
   };
@@ -78,4 +69,3 @@ function wrapPromise(promise) {
     },
   };
 }
-
