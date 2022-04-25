@@ -1,4 +1,4 @@
-import { topCities } from "../data/cities";
+import { fetchCities } from "../data/cities";
 
 export function fetchCityListData(displayCount = 5) {
   const citiesPromise = fetchCities(displayCount);
@@ -36,11 +36,3 @@ function wrapPromise(promise) {
     },
   };
 }
-
-const fetchCities = (displayCount = 5) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(topCities(displayCount));
-    }, 2000);
-  });
-};

@@ -19,7 +19,7 @@ export default function App({ displayCount }) {
 
   return (
     <>
-      <h1>React 17</h1>
+      <h1>React 18 No Suspense</h1>
       <ul>
         {cities.slice(0, displayCount).map((rec) => (
           <li key={rec.id}>{rec.name}</li>

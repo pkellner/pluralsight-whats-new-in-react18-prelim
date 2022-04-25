@@ -1,4 +1,8 @@
-import { cities } from "../data/cities";
+import {
+  fetchCityInfo,
+  fetchCityLocation,
+  fetchCityStats,
+} from "../data/cities";
 
 export function fetchCityDetailData(cityId) {
   let cityInfoPromise = fetchCityInfo(cityId);
@@ -40,57 +44,3 @@ function wrapPromise(promise) {
     },
   };
 }
-
-const fetchCityInfo = (cityId) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(
-        cities
-          .filter((a) => a.id === cityId)
-          .map(function ({ id, name, state }) {
-            return {
-              id,
-              name,
-              state,
-            };
-          })[0]
-      );
-    }, 1800);
-  });
-};
-
-const fetchCityStats = (cityId) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(
-        cities
-          .filter((a) => a.id === cityId)
-          .map(function ({ growth, id, population }) {
-            return {
-              id,
-              population,
-              growth,
-            };
-          })[0]
-      );
-    }, 2300);
-  });
-};
-
-const fetchCityLocation = (cityId) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(
-        cities
-          .filter((a) => a.id === cityId)
-          .map(function (rec) {
-            return {
-              id: rec.id,
-              latitude: rec.latitude,
-              longitude: rec.longitude,
-            };
-          })[0]
-      );
-    }, 1300);
-  });
-};
