@@ -13,7 +13,7 @@ export default function App() {
       setCities(data);
       setLoading(false);
     });
-  });
+  },[]);
 
   if (loading) {
     return <div>Loading....</div>;
