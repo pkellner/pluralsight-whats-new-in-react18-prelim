@@ -22,7 +22,7 @@ export default function App() {
   return (
     <div className="container">
       <h1>React 18 No Suspense</h1>
-      <div className="col-4">
+      <div className="col-3">
         <ul className="list-group city--list">
           <li className="list-group-item city--header">City list</li>
           {cities.map((rec) => (

@@ -10014,6 +10014,27 @@ export function fetchCities(displayCount) {
   });
 }
 
+// export const fetchCities = () => {
+//   return new Promise((resolve) => {
+//     fetch("https://jsonplaceholder.typicode.com/posts")
+//       .then((res) => res.json())
+//       .then((responseData) => {
+//         resolve(
+//           responseData
+//           // responseData.map((r) => {
+//           //   return { id: r.id, name: r.name };
+//           // })
+//         );
+//       });
+//   });
+// };
+
+export const fetchCitiesxxx = fetch("https://jsonplaceholder.typicode.com/posts")
+  .then((res) => res.json())
+  .then((responseData) => {
+    return responseData;
+  });
+
 export function fetchCityInfo(cityId) {
   return new Promise((resolve) => {
     setTimeout(() => {
