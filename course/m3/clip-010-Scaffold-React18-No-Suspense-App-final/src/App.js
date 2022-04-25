@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { fetchCities } from "./data/cities";
 
-const displayCount = 5;
+const displayCount = 3;
 
 export default function App() {
   const [cities, setCities] = useState();

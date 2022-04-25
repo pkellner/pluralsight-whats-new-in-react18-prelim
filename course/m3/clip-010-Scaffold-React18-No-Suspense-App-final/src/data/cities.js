@@ -1,4 +1,4 @@
-export const cities = [
+const cities = [
   {
     name: "San Antonio",
     growth_from_2000_to_2013: "21.0%",
@@ -10014,20 +10014,30 @@ function topCities(n) {
 //   });
 // }
 
+// export function fetchCities(displayCount) {
+//   return new Promise((resolve) => {
+//     fetch("https://jsonplaceholder.typicode.com/posts")
+//       .then((res) => res.json())
+//       .then((responseData) => {
+//         resolve(
+//           responseData.slice(0, displayCount).map(function (rec) {
+//             return {
+//               id: rec.id,
+//               name: rec.title,
+//             };
+//           })
+//         );
+//       });
+//   });
+// }
+
 export function fetchCities(displayCount) {
   return new Promise((resolve) => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => res.json())
-      .then((responseData) => {
-        resolve(
-          responseData.slice(0, displayCount).map(function (rec) {
-            return {
-              id: rec.id,
-              name: rec.title,
-            };
-          })
-        );
-      });
+    resolve([
+      { id: 1, name: "Chicago" },
+      { id: 2, name: "New York City" },
+      { id: 3, name: "Miami" },
+    ]);
   });
 }
 
