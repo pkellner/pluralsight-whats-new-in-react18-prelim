@@ -29,9 +29,6 @@ const fetchCities = (displayCount = 3) => {
           { id: 1, name: "Chicago" },
           { id: 2, name: "New York City" },
           { id: 3, name: "Miami" },
-          { id: 4, name: "Houston" },
-          { id: 5, name: "Phoenix" },
-          { id: 6, name: "San Jose" },
         ].slice(0, displayCount)
       );
     }, 2000);
