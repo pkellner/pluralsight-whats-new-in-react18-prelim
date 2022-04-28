@@ -1,25 +1,14 @@
 import "./App.css";
-import { useEffect, useState } from "react";
-import { fetchCities } from "./data/cities";
-
+import { fetchCityListData } from "./dataApi/fetchCityListData";
+import { Suspense } from "react";
 const displayCount = 10;
-
-function App() {
-  const [cities, setCities] = useState();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchCities(displayCount).then((data) => {
-      setCities(data);
-      setLoading(false);
-    });
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
+function RenderComponent({ resource }) {
+  
+  const cities = resource?.cities.read();
 
   return (
     <div className="container">
-      <h1>React 18 no Suspense</h1>
+      <h1>React 18 with Suspense</h1>
       <div className="col-12">
         <ul className="list-group city--list">
           <li className="list-group-item city--header">City List</li>
@@ -31,6 +20,15 @@ function App() {
         </ul>
       </div>
     </div>
+  );
+}
+
+function App() {
+  const resource = fetchCityListData(displayCount);
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <RenderComponent resource={resource} />
+    </Suspense>
   );
 }
 
