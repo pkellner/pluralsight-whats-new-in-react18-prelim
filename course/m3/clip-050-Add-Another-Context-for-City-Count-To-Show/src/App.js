@@ -2,14 +2,20 @@ import "./App.css";
 import CityList from "./ui/CityList";
 import { Suspense } from "react";
 import { CityListStoreProvider } from "./contexts/CityListStoreContext";
+import { DisplayCountProvider } from "./contexts/DisplayCountContext";
+import CityDisplayCount from "./ui/CityDisplayCount";
+
 const displayCount = 5;
 function App() {
   return (
-    <CityListStoreProvider displayCount={displayCount}>
-      <Suspense fallback={<div>Loading...</div>}>
-        <CityList />
-      </Suspense>
-    </CityListStoreProvider>
+    <DisplayCountProvider initialDisplayCount={displayCount} >
+      <CityDisplayCount />
+      <CityListStoreProvider>
+        <Suspense fallback={<div>Loading...</div>}>
+          <CityList />
+        </Suspense>
+      </CityListStoreProvider>
+    </DisplayCountProvider>
   );
 }
 
