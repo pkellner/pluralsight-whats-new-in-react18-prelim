@@ -1,9 +1,8 @@
 import "./App.css";
 import { fetchCityListData } from "./dataApi/fetchCityListData";
 import { Suspense } from "react";
-const displayCount = 10;
+const displayCount = 5;
 function RenderComponent({ resource }) {
-  
   const cities = resource?.cities.read();
 
   return (

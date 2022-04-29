@@ -1,4 +1,5 @@
-import "./App.css";import { Suspense } from "react";
+import "./App.css";
+import { Suspense } from "react";
 import { fetchCityListData } from "./dataApi/fetchCityListData";
 
 function RenderComponent({ resource }) {

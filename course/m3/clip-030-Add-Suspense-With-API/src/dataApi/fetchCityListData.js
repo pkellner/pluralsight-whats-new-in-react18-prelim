@@ -1,4 +1,4 @@
-import { fetchCities } from '../data/cities';
+import { fetchCities } from "../data/cities";
 
 export function fetchCityListData(displayCount) {
   const cityPromise = fetchCities(displayCount);
