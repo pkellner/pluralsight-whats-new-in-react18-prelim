@@ -8,8 +8,9 @@ import CityDisplayCount from "./ui/CityDisplayCount";
 function App() {
   return (
     <DisplayCountProvider initialDisplayCount={5}>
+      <CityDisplayCount />
       <CityListStoreProvider>
-        <CityDisplayCount />
+        
         <Suspense fallback={<div>Loading...</div>}>
           <CityList />
         </Suspense>
