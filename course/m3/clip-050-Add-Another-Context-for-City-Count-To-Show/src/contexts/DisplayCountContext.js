@@ -1,9 +1,8 @@
-import { createContext, useState } from 'react';
+import { createContext, useState } from "react";
 
 export const DisplayCountContext = createContext();
 
 function DisplayCountProvider({ initialDisplayCount, children }) {
-  
   const [displayCount, setDisplayCount] = useState(initialDisplayCount);
 
   const contextValue = {
@@ -12,7 +11,7 @@ function DisplayCountProvider({ initialDisplayCount, children }) {
   };
 
   return (
-    <DisplayCountContext.Provider value={contextValue} >
+    <DisplayCountContext.Provider value={contextValue}>
       {children}
     </DisplayCountContext.Provider>
   );

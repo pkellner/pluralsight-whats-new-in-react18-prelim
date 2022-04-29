@@ -1,9 +1,7 @@
-import { useContext } from 'react';
+import { useContext } from "react";
 import { DisplayCountContext } from "../contexts/DisplayCountContext";
 
-
 export default function CityDisplayCount() {
-
   const { displayCount, setDisplayCount } = useContext(DisplayCountContext);
 
   return (
@@ -13,16 +11,19 @@ export default function CityDisplayCount() {
           <button
             type="button"
             key={buttonCnt}
-            className={displayCount === buttonCnt ? "btn btn-secondary active" : "btn btn-secondary"}
+            className={
+              displayCount === buttonCnt
+                ? "btn btn-secondary active"
+                : "btn btn-secondary"
+            }
             onClick={() => {
               setDisplayCount(buttonCnt);
             }}
           >
             {buttonCnt}
           </button>
-        )
+        );
       })}
     </div>
   );
-
 }

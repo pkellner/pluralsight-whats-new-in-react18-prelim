@@ -10,7 +10,6 @@ function App() {
     <DisplayCountProvider initialDisplayCount={5}>
       <CityDisplayCount />
       <CityListStoreProvider>
-        
         <Suspense fallback={<div>Loading...</div>}>
           <CityList />
         </Suspense>

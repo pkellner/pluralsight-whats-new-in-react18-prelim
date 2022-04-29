@@ -5,7 +5,6 @@ import { DisplayCountContext } from "./DisplayCountContext";
 export const CityListStoreContext = createContext();
 
 function CityListStoreProvider({ children }) {
-
   const { displayCount } = useContext(DisplayCountContext);
 
   const resource = fetchCityListData(displayCount);
