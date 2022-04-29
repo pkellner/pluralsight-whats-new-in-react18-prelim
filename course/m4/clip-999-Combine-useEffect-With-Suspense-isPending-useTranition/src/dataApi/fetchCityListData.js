@@ -37,7 +37,7 @@ function wrapPromise(promise) {
   };
 }
 
-const fetchCities = (displayCount = 5) => {
+const fetchCities = (displayCount = 0) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(topCities(displayCount));

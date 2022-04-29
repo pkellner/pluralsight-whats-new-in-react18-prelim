@@ -14,7 +14,6 @@ function CityListStoreProvider({ children }) {
   useEffect(() => {
     startTransition(() => {
       setResource(fetchCityListData(displayCount));
-      //setResourceCityList(fetchCityListData(displayCount));
     });
   }, [displayCount]);
 
