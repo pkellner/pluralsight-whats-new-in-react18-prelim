@@ -1,4 +1,4 @@
-export const cities = [
+const cities = [
   {
     name: "San Antonio",
     growth_from_2000_to_2013: "21.0%",
@@ -9991,8 +9991,6 @@ export const cities = [
   },
 ];
 
-// get first "n" then sort them by reverse population
-// (this forces first record to change when n changes likely)
 function topCities(n) {
   const ret = cities
     .filter((a) => a.state === "Florida")
@@ -10014,7 +10012,7 @@ export function fetchCities(displayCount) {
   });
 }
 
-export function fetchCityInfo(cityId) {
+export const fetchCityInfo = (cityId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(
@@ -10030,15 +10028,15 @@ export function fetchCityInfo(cityId) {
       );
     }, 1800);
   });
-}
+};
 
-export function fetchCityStats(cityId) {
+export const fetchCityStats = (cityId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(
         cities
           .filter((a) => a.id === cityId)
-          .map(function ({ growth, id, population }) {
+          .map(function ({growth, id, population}) {
             return {
               id,
               population,
@@ -10048,9 +10046,9 @@ export function fetchCityStats(cityId) {
       );
     }, 2300);
   });
-}
+};
 
-export function fetchCityLocation(cityId) {
+export const fetchCityLocation = (cityId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(
@@ -10066,4 +10064,5 @@ export function fetchCityLocation(cityId) {
       );
     }, 1300);
   });
-}
+};
+
