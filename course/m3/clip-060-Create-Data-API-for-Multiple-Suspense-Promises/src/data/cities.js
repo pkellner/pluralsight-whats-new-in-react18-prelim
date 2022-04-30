@@ -10011,3 +10011,59 @@ export function fetchCities(displayCount) {
     }, 2000);
   });
 }
+
+function fetchCityInfo(cityId) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        cities
+          .filter((a) => a.id === cityId)
+          .map(function (rec) {
+            return {
+              id: rec.id,
+              name: rec.name,
+              state: rec.state,
+            }
+          })[0]
+      );
+    },1800);
+  });
+}
+
+function fetchCityStats(cityId) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        cities
+          .filter((a) => a.id === cityId)
+          .map(function (rec) {
+            return {
+              id: rec.id,
+              population: rec.population,
+              growth: rec.growth_from_2000_to_2013,
+            };
+          })[0]
+      );
+    },2300);
+  });
+}
+
+function fetchCityLocation(cityId) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        cities
+          .filter((a) => a.id === cityId)
+          .map(function(rec) {
+            return {
+              id: rec.id,
+              latitude: rec.latitude,
+              longitude: rec.longitude,
+            };
+          })[0]
+      );
+    },1300);
+  });
+}
+
+export { fetchCityInfo, fetchCityStats, fetchCityLocation };
