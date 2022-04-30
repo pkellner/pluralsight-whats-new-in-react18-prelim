@@ -20,7 +20,6 @@ function CityDetailStoreProvider({ children, initialCityId }) {
     setResourceCityDetail(fetchCityDetailData(cityId));
   };
 
-  
   const getCityInfo = resourceCityDetail.cityInfo.read;
   const getCityStats = resourceCityDetail.cityStats.read;
   const getCityLocation = resourceCityDetail.cityLocation.read;

@@ -10036,7 +10036,7 @@ export const fetchCityStats = (cityId) => {
       resolve(
         cities
           .filter((a) => a.id === cityId)
-          .map(function ({growth, id, population}) {
+          .map(function ({ growth, id, population }) {
             return {
               id,
               population,
@@ -10065,4 +10065,3 @@ export const fetchCityLocation = (cityId) => {
     }, 1300);
   });
 };
-
