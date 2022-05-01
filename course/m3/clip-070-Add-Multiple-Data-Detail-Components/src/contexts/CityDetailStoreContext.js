@@ -1,14 +1,14 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 import { CityListStoreContext } from "./CityListStoreContext";
 import { fetchCityDetailData } from "../dataApi/fetchCityDetailData";
 
 export const CityDetailStoreContext = createContext();
 
-function CityDetailStoreProvider({initialCityId, children}) {
+function CityDetailStoreProvider({ initialCityId, children }) {
   const [resourceCityDetail, setResourceCityDetail] = useState(
     fetchCityDetailData(initialCityId)
-  )
-  
+  );
+
   const setCityId = (cityId) => {
     setResourceCityDetail(fetchCityDetailData(cityId));
   };
@@ -19,7 +19,9 @@ function CityDetailStoreProvider({initialCityId, children}) {
 
   const contextValue = {
     setCityId,
-    getCityInfo, getCityStats, getCityLocation,
+    getCityInfo,
+    getCityStats,
+    getCityLocation,
   };
 
   return (

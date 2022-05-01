@@ -10023,10 +10023,10 @@ function fetchCityInfo(cityId) {
               id: rec.id,
               name: rec.name,
               state: rec.state,
-            }
+            };
           })[0]
       );
-    },1800);
+    }, 1800);
   });
 }
 
@@ -10044,7 +10044,7 @@ function fetchCityStats(cityId) {
             };
           })[0]
       );
-    },2300);
+    }, 2300);
   });
 }
 
@@ -10054,7 +10054,7 @@ function fetchCityLocation(cityId) {
       resolve(
         cities
           .filter((a) => a.id === cityId)
-          .map(function(rec) {
+          .map(function (rec) {
             return {
               id: rec.id,
               latitude: rec.latitude,
@@ -10062,7 +10062,7 @@ function fetchCityLocation(cityId) {
             };
           })[0]
       );
-    },1300);
+    }, 1300);
   });
 }
 

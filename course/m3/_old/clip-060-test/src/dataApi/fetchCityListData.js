@@ -1,13 +1,9 @@
-import { fetchCityInfo, fetchCityStats, fetchCityLocation } from "../data/cities";
+import { fetchCities } from "../data/cities";
 
-export function fetchCityDetailData(cityId) {
-  const cityInfoPromise = fetchCityInfo(cityId);
-  const cityStatsPromise = fetchCityStats(cityId);
-  const cityLocationPromise = fetchCityLocation(cityId);
+export function fetchCityListData(displayCount) {
+  const cityPromise = fetchCities(displayCount);
   return {
-    cityInfo: wrapPromise(cityInfoPromise),
-    cityStats: wrapPromise(cityStatsPromise),
-    cityLocation: wrapPromise(cityLocationPromise),
+    cities: wrapPromise(cityPromise),
   };
 }
 
