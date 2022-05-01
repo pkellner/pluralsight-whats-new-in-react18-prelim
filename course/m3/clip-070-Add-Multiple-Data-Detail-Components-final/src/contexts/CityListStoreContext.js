@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import { createContext, useContext } from "react";
 import { fetchCityListData } from "../dataApi/fetchCityListData";
 import { DisplayCountContext } from "./DisplayCountContext";
 

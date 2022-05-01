@@ -1,9 +1,9 @@
 import { fetchCities } from "../data/cities";
 
-export function fetchCityListData(displayCount = 5) {
-  const citiesPromise = fetchCities(displayCount);
+export function fetchCityListData(displayCount) {
+  const cityPromise = fetchCities(displayCount);
   return {
-    cities: wrapPromise(citiesPromise),
+    cities: wrapPromise(cityPromise),
   };
 }
 

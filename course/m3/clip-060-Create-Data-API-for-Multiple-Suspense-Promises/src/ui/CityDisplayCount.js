@@ -3,7 +3,6 @@ import { DisplayCountContext } from "../contexts/DisplayCountContext";
 
 export default function CityDisplayCount() {
   const { displayCount, setDisplayCount } = useContext(DisplayCountContext);
-
   return (
     <div className="btn-group" role="group" aria-label="Basic example">
       {[3, 5, 10].map((buttonCnt) => {

@@ -1,7 +1,7 @@
 import {
   fetchCityInfo,
-  fetchCityLocation,
   fetchCityStats,
+  fetchCityLocation,
 } from "../data/cities";
 
 export function fetchCityDetailData(cityId) {

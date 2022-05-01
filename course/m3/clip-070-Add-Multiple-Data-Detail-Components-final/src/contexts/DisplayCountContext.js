@@ -1,8 +1,8 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 
 export const DisplayCountContext = createContext();
 
-function DisplayCountProvider({ children, initialDisplayCount }) {
+function DisplayCountProvider({ initialDisplayCount, children }) {
   const [displayCount, setDisplayCount] = useState(initialDisplayCount);
 
   const contextValue = {
